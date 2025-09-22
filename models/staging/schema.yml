@@ -1,20 +1,11 @@
-version: 2
-
 models:
-  - name: stg_heart
-    description: "Cleaned heart disease data from raw source"
+  - name: stg_health_spending
     columns:
-      - name: age
-        description: "Patient age"
-        tests:
-          - not_null
-      - name: heart_disease_flag
-        description: "Target variable: 1 = heart disease, 0 = no heart disease"
-        tests:
-          - not_null
-          - accepted_values:
-              values: [0, 1]
-      - name: cholesterol
-        description: "Serum cholesterol in mg/dl"
-        tests:
-          - not_null
+      - name: category
+        tests: [not_null]
+      - name: total_spending
+        tests: [not_null]
+      - name: population_k
+        tests: [not_null]
+      - name: spending_per_capita
+        tests: [not_null]

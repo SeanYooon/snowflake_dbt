@@ -1,14 +1,14 @@
 version: 2
 
 models:
-  - name: heart_summary
-    description: "Aggregated heart disease metrics by age"
+  - name: mart_health_spending
+    description: "Aggregated health spending metrics for Tableau dashboards"
     tests:
       - not_empty
     columns:
-      - name: age
-        description: "Patient age"
-      - name: avg_chol
-        description: "Average cholesterol level"
-      - name: positive_cases
-        description: "Count of positive heart disease cases"
+      - name: province
+      - name: year
+      - name: category
+      - name: total_spending
+      - name: avg_spending_per_capita
+      - name: avg_yoy_pct_change
