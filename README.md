@@ -20,7 +20,7 @@ The pipeline follows a three-layer architecture:
 ---
 
 ## Architecture  
-```text
+
 📂 Raw Layer
    └── ANALYTICS_DB.RAW.HEART_RAW  (CSV source)
 
