@@ -1,7 +1,5 @@
 # Heart Disease Analytics Pipeline
 
-  
-[
 
 ## Overview  
 A three-layer analytics workflow built with **dbt Cloud** and **Snowflake** to derive heart disease metrics by age.
@@ -62,12 +60,3 @@ A three-layer analytics workflow built with **dbt Cloud** and **Snowflake** to d
 - All tests pass and docs visualize model lineage.  
 
 
-
-## Next Steps  
-- Add incremental or snapshot models  
-- Extend marts by demographic segments  
-- Create a BI dashboard (Tableau/Looker)  
-- Schedule dbt Cloud jobs & alerts  
-
-
-Sources
