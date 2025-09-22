@@ -18,7 +18,7 @@ The pipeline follows a three-layer architecture:
 - **Version-controlled** in GitHub with CI/CD integration  
 
 ---
-
+```text
 ## Architecture  
 
 📂 Raw Layer
@@ -30,7 +30,7 @@ The pipeline follows a three-layer architecture:
 📂 Mart Layer
    └── heart_summary.sql → aggregates cholesterol & cases by age
 
-
+```
 ⸻
 
 Repository Structure
