@@ -1,0 +1,14 @@
+name: 'my_new_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+
+models:
+  my_new_project:
+    staging:
+      schema: staging
+    marts:
+      schema: marts
