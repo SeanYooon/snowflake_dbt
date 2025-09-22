@@ -18,23 +18,23 @@ The pipeline follows a three-layer architecture:
 - **Version-controlled** in GitHub with CI/CD integration  
 
 ---
-```text
+
 ## Architecture  
 
-📂 Raw Layer
+ **Raw Layer**
    └── ANALYTICS_DB.RAW.HEART_RAW  (CSV source)
 
-📂 Staging Layer
+**Staging Layer**
    └── stg_heart.sql → cleanses raw columns, enforces types
 
-📂 Mart Layer
+**Mart Layer**
    └── heart_summary.sql → aggregates cholesterol & cases by age
 
 
 ⸻
 
 Repository Structure
-
+```
 .
 ├── dbt_project.yml         # dbt project config
 ├── README.md               # Project overview
@@ -52,42 +52,35 @@ Repository Structure
 
 Getting Started
 
-1. Clone the repository
-
+**1. Clone the repository**
+```bash
 git clone https://github.com/SeanYooon/Snowflake_dbt.git
 cd Snowflake_dbt
-
-2. Install dependencies (if running locally)
+```
+**2. Install dependencies (if running locally)**
 
 dbt deps
 
-3. Connect to Snowflake in dbt Cloud
+**3. Connect to Snowflake in dbt Cloud**
 
 Configure your connection settings:
-	•	Account: <your_snowflake_account_locator>.<region>
+	•	Account: NDYZXFF-AU40622
 	•	Database: ANALYTICS_DB
 	•	Warehouse: COMPUTE_WH
 	•	Role: SYSADMIN
 	•	Schema: your personal dev schema (e.g., DBT_SYOON)
 
 4. Run the pipeline
-
+```bash
 dbt build
 dbt docs generate
 dbt docs serve
-
+```
 
 ⸻
 
 Results
-	•	STG_HEART → standardized staging table
-	•	HEART_SUMMARY → aggregated mart table (avg cholesterol & case counts by age)
+	•	**STG_HEART** → standardized staging table
+	•	**HEART_SUMMARY** → aggregated mart table (avg cholesterol & case counts by age)
 	•	All models tested and documented with lineage graph
 
-
-
----
-
-⚡ This keeps the professional polish of version 2, while restoring the **clear three-layer architecture** from version 1. Perfect for GitHub.  
-
-Do you want me to also create a **shorter one-paragraph description** you can reuse in your **resume bullet points**?
