@@ -30,7 +30,7 @@ The pipeline follows a three-layer architecture:
 📂 Mart Layer
    └── heart_summary.sql → aggregates cholesterol & cases by age
 
-```
+
 ⸻
 
 Repository Structure
@@ -47,7 +47,7 @@ Repository Structure
         ├── heart_summary.sql  # Aggregates metrics by age
         └── schema.yml         # Tests & docs for mart
 
-
+```
 ⸻
 
 Getting Started
