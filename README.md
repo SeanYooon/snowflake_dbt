@@ -1,6 +1,3 @@
-Here’s a tailored **README.md** in your portfolio style for this project. Add this file at the repo root:
-
-```markdown
 # Heart Disease Analytics Pipeline
 
 ## Overview  
