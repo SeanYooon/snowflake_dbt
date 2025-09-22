@@ -69,7 +69,5 @@ A three-layer analytics workflow built with **dbt Cloud** and **Snowflake** to d
 - Create a BI dashboard (Tableau/Looker)  
 - Schedule dbt Cloud jobs & alerts  
 
-## License  
-MIT License
 
 Sources
