@@ -1,75 +1,93 @@
-# Heart Disease Analytics Pipeline
+#  Heart Disease Analytics Pipeline
 
 ## Overview  
-Built with **dbt Cloud** & **Snowflake**, this project implements a production-grade, three-layer analytics pipeline to analyze heart disease metrics by age.
+This project implements a **production-style analytics workflow** using **dbt Cloud** and **Snowflake** to analyze heart disease metrics by age.  
 
-**Workflow**:  
-1. Load raw data (`heart.csv`) into Snowflake  
-2. Clean & standardize in staging (`stg_heart`)  
-3. Aggregate metrics by age in mart (`heart_summary`)  
+The pipeline follows a three-layer architecture:  
+1. **Raw** → load CSV data (`heart.csv`) into Snowflake  
+2. **Staging** → clean & standardize into a dbt staging model (`stg_heart`)  
+3. **Mart** → aggregate metrics by age into a mart table (`heart_summary`)  
+
+---
 
 ## Key Features  
-- Modular SQL models in dbt  
-- Automated tests: `not_null`, `accepted_values`, `not_empty`  
-- Single-command run: `dbt build`  
-- Auto-generated documentation via `dbt docs`  
-- Version-controlled in GitHub  
+- **Layered dbt models**: raw → staging → marts  
+- **Automated testing** with `not_null`, `accepted_values`, and `not_empty` checks  
+- **Single-command run** with `dbt build`  
+- **Auto-generated documentation** and lineage graph via `dbt docs`  
+- **Version-controlled** in GitHub with CI/CD integration  
 
-## Repository Structure  
-```
+---
+
+## Architecture  
+```text
+📂 Raw Layer
+   └── ANALYTICS_DB.RAW.HEART_RAW  (CSV source)
+
+📂 Staging Layer
+   └── stg_heart.sql → cleanses raw columns, enforces types
+
+📂 Mart Layer
+   └── heart_summary.sql → aggregates cholesterol & cases by age
+
+
+⸻
+
+Repository Structure
+
 .
-├── dbt_project.yml         # dbt config
+├── dbt_project.yml         # dbt project config
 ├── README.md               # Project overview
 └── models
-    ├── sources.yml         # Raw source definitions
+    ├── sources.yml         # Defines HEART_RAW as a dbt source
     ├── staging
     │   ├── stg_heart.sql   # Cleans raw data
     │   └── schema.yml      # Tests & docs for staging
     └── marts
-        ├── heart_summary.sql  # Aggregates metrics
+        ├── heart_summary.sql  # Aggregates metrics by age
         └── schema.yml         # Tests & docs for mart
-```
 
-## Getting Started
 
-1. **Clone**  
-   ```
-   git clone https://github.com/SeanYooon/Snowflake_dbt.git
-   cd Snowflake_dbt
-   ```
+⸻
 
-2. **Install dependencies**  
-   ```
-   dbt deps
-   ```
+Getting Started
 
-3. **Connect to Snowflake**  
-   In dbt Cloud’s **Connection Settings**, ensure:
-   - Account: `NDYZXFF-AU40622`  
-   - Database: `ANALYTICS_DB`  
-   - Warehouse: `COMPUTE_WH`  
-   - Role: `SYSADMIN`  
+1. Clone the repository
 
-4. **Run Pipeline**  
-   ```
-   dbt build
-   dbt docs generate
-   dbt docs serve
-   ```
+git clone https://github.com/SeanYooon/Snowflake_dbt.git
+cd Snowflake_dbt
 
-## Results  
-- **STG_HEART**: cleansed table in `DBT_SYOON_STAGING`  
-- **HEART_SUMMARY**: aggregated metrics table in `DBT_SYOON_MARTS`  
-- Tests all pass, and docs site displays model lineage & descriptions
+2. Install dependencies (if running locally)
 
-## Next Steps  
-- Extend to incremental models or snapshots  
-- Add demographic breakdowns (gender, chest pain type)  
-- Build a BI dashboard using `heart_summary`
+dbt deps
+
+3. Connect to Snowflake in dbt Cloud
+
+Configure your connection settings:
+	•	Account: <your_snowflake_account_locator>.<region>
+	•	Database: ANALYTICS_DB
+	•	Warehouse: COMPUTE_WH
+	•	Role: SYSADMIN
+	•	Schema: your personal dev schema (e.g., DBT_SYOON)
+
+4. Run the pipeline
+
+dbt build
+dbt docs generate
+dbt docs serve
+
+
+⸻
+
+Results
+	•	STG_HEART → standardized staging table
+	•	HEART_SUMMARY → aggregated mart table (avg cholesterol & case counts by age)
+	•	All models tested and documented with lineage graph
+
+
 
 ---
 
-_Add this project to your portfolio:_  
-**[Data Analysis Portfolio](https://github.com/SeanYooon/Data-Analysis-Portfolio)**
+⚡ This keeps the professional polish of version 2, while restoring the **clear three-layer architecture** from version 1. Perfect for GitHub.  
 
-Sources
+Do you want me to also create a **shorter one-paragraph description** you can reuse in your **resume bullet points**?
