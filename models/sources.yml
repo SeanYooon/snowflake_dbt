@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: cihi
     database: ANALYTICS_DB
     schema: RAW
     tables:
-      - name: heart_raw
-        description: "Raw heart disease dataset from CSV upload"
+      - name: HEALTH_SPENDING_RAW
+        description: "Cleaned health spending & population data"
