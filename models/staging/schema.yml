@@ -1,11 +1,18 @@
+version: 2
+
 models:
   - name: stg_health_spending
+    description: "Staged CIHI health spending with nulls filtered"
     columns:
       - name: category
+        description: "Spending category"
         tests: [not_null]
       - name: total_spending
+        description: "Total spending across all categories"
         tests: [not_null]
       - name: population_k
+        description: "Population in thousands"
         tests: [not_null]
       - name: spending_per_capita
+        description: "Per-capita spending"
         tests: [not_null]

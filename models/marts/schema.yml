@@ -3,12 +3,15 @@ version: 2
 models:
   - name: mart_health_spending
     description: "Aggregated health spending metrics for Tableau dashboards"
-    tests:
-      - not_empty
     columns:
       - name: province
+        tests: [not_null]
       - name: year
+        tests: [not_null]
       - name: category
+        tests: [not_null]
       - name: total_spending
+        tests: [not_null]
       - name: avg_spending_per_capita
-      - name: avg_yoy_pct_change
+        tests: [not_null]
+      - name: avg_prev_spending_pc
